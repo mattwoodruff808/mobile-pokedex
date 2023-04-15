@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "web": {
+      "bundler": "metro"
+    },
+    "name": "real-pokedex",
+    "slug": "real-pokedex"
+  }
+}
