@@ -1,11 +1,14 @@
 import { View, Text, ScrollView, SafeAreaView, StyleSheet } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 
+import useGetPokemons from '../hooks/useGetPokemons';
+
 import Search from '../components/home/search/Search';
 import PokeList from '../components/home/pokelist/PokeList';
 
 const Home = () => {
   const router = useRouter();
+  const { data, isLoading, error } = useGetPokemons();
 
   return (
     <SafeAreaView style={styles.safeArea}>
