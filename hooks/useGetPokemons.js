@@ -13,7 +13,20 @@ const useGetPokemons = () => {
   try {
     axios
       .get('https://pokeapi.co/api/v2/pokemon?limit=152&offset=0')
-      .then(res => setData(res.data));
+      .then(res => {
+        const pokeArr = res.data.results;
+        console.log('POKEARR:', pokeArr)
+        const mappedPokeArr = pokeArr.map((pokemon) => {
+          const spriteIndex = pokemon.url.split('/')[6];
+
+          return {
+            name: pokemon.name,
+            sprite: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${spriteIndex}.png`,
+            url: pokemon.url,
+          }
+        });
+        setData(mappedPokeArr);
+      });
     
     setIsLoading(false);
   } catch (error) {

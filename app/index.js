@@ -9,6 +9,7 @@ import PokeList from '../components/home/pokelist/PokeList';
 const Home = () => {
   const router = useRouter();
   const { data, isLoading, error } = useGetPokemons();
+  console.log('DATA:', data);
 
   return (
     <SafeAreaView style={styles.safeArea}>
