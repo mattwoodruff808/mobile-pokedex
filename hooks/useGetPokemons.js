@@ -15,7 +15,6 @@ const useGetPokemons = () => {
       .get('https://pokeapi.co/api/v2/pokemon?limit=152&offset=0')
       .then(res => {
         const pokeArr = res.data.results;
-        console.log('POKEARR:', pokeArr)
         const mappedPokeArr = pokeArr.map((pokemon) => {
           const spriteIndex = pokemon.url.split('/')[6];
 

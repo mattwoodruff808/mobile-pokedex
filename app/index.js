@@ -29,7 +29,10 @@ const Home = () => {
         <View style={styles.main}>
           <Text>Pokedex Title</Text>
           <Search />
-          <PokeList />
+          <PokeList 
+            isLoading={isLoading} 
+            error={error} 
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
