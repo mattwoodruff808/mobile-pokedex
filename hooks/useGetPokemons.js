@@ -12,7 +12,7 @@ const useGetPokemons = () => {
 
   try {
     axios
-      .get('https://pokeapi.co/api/v2/pokemon?limit=152&offset=0')
+      .get('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0')
       .then(res => {
         const pokeArr = res.data.results;
         const mappedPokeArr = pokeArr.map((pokemon) => {

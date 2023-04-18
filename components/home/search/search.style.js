@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     borderRadius: 5,
     padding: 10,
-    margin: 10,
+    margin: 30,
   },
   input: {
     fontSize: 16,

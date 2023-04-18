@@ -44,10 +44,11 @@ const Home = () => {
 
           <PokeList 
             data={data.filter((d) => {
-              return inputText === '' ? d : d.name.includes(inputText);
+              return inputText === '' ? d : d.name.includes(inputText.toLowerCase());
             })}
             isLoading={isLoading} 
             error={error} 
+            router={router}
           />
 
         </View>
@@ -62,9 +63,11 @@ const styles = StyleSheet.create({
   },
   safeArea: {
     backgroundColor: 'white',
+    width: '100%',
   },
   main: {
     flex: 1,
+    width: '100%',
     alignItems: 'center',
     padding: 10,
   },
