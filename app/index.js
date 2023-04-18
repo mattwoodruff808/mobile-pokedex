@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, ScrollView, SafeAreaView, StyleSheet } from 'react-native';
+import { View, Text, Image, ScrollView, SafeAreaView, StyleSheet } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 
 import useGetPokemons from '../hooks/useGetPokemons';
@@ -29,7 +29,10 @@ const Home = () => {
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.main}>
-          <Text>Pokedex Title</Text>
+          <Image 
+            style={styles.logo}
+            source={require('../assets/poke-logo.png')}
+          />
 
           <Search 
             inputText={inputText} 
@@ -56,8 +59,14 @@ const styles = StyleSheet.create({
   },
   main: {
     flex: 1,
+    alignItems: 'center',
     padding: 10,
   },
+  logo: {
+    width: 325,
+    height: 120,
+    marginVertical: 20,
+  }
 });
 
 export default Home;
