@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native';
 
-const PokeList = ({ isLoading, error }) => {
+const PokeList = ({ data, isLoading, error }) => {
   if (isLoading) return <View><Text>Loading...</Text></View>
 
   if (error) return <View><Text>Something went wrong...</Text></View>

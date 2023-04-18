@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { View, Text, ScrollView, SafeAreaView, StyleSheet } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 
@@ -7,6 +8,7 @@ import Search from '../components/home/search/Search';
 import PokeList from '../components/home/pokelist/PokeList';
 
 const Home = () => {
+  const [inputText, setInputText] = useState('');
   const router = useRouter();
   const { data, isLoading, error } = useGetPokemons();
 
@@ -28,11 +30,20 @@ const Home = () => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.main}>
           <Text>Pokedex Title</Text>
-          <Search />
+
+          <Search 
+            inputText={inputText} 
+            setInputText={setInputText}
+          />
+
           <PokeList 
+            data={data.filter((d) => {
+              return inputText === '' ? d : d.name.includes(inputText);
+            })}
             isLoading={isLoading} 
             error={error} 
           />
+
         </View>
       </ScrollView>
     </SafeAreaView>

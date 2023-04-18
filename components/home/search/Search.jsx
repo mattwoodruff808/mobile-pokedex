@@ -1,9 +1,16 @@
-import { View, Text } from 'react-native';
+import { View, TextInput } from 'react-native';
 
-const Search = () => {
+import styles from './search.style';
+
+const Search = ({ inputText, setInputText }) => {
   return (
-    <View>
-      <Text>Search Component</Text>
+    <View style={styles.container}>
+      <TextInput
+        style={styles.input}
+        onChangeText={setInputText}
+        placeholder='Search Pokemon...'
+        value={inputText}
+      />
     </View>
   )
 }
