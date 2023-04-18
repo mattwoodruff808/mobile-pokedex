@@ -16,13 +16,16 @@ const Home = () => {
     <SafeAreaView style={styles.safeArea}>
       <Stack.Screen 
         options={{
+          headerStyle: {
+            backgroundColor: '#3363af',
+          },
           headerShadowVisible: false,
           headerTitle: '',
           headerLeft: () => (
-            <Text>Ash Ketchum</Text>
+            <Text style={styles.headerText}>Ash Ketchum</Text>
           ),
           headerRight: () => (
-            <Text>Power Off</Text>
+            <Text style={styles.headerText}>Power Off</Text>
           ),
         }}
       />
@@ -54,6 +57,9 @@ const Home = () => {
 }
 
 const styles = StyleSheet.create({
+  headerText: {
+    color: 'white',
+  },
   safeArea: {
     backgroundColor: 'white',
   },
