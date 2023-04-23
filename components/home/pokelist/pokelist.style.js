@@ -16,7 +16,10 @@ const styles = StyleSheet.create({
   cardImage: {
     width: 150,
     height: 150,
-  }
+  },
+  pokeName: {
+    fontWeight: 'bold',
+  },
 });
 
 export default styles;

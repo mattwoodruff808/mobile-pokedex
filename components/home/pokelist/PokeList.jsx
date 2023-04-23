@@ -21,7 +21,9 @@ const PokeList = ({ data, isLoading, error, router }) => {
                 style={styles.cardImage}
                 source={{ uri: item.sprite, }}
               />
-              <Text>{item.name}</Text>
+              <Text style={styles.pokeName}>
+                {item.name.charAt(0).toUpperCase() + item.name.slice(1)}
+              </Text>
             </TouchableOpacity>
           )
         }}
